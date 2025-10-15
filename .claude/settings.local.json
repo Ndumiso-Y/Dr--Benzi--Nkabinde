@@ -3,7 +3,14 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: High-level UI/UX design with glassmorphism\n\n- Full-page hero with book cover background\n- Professional glassmorphism cards for qualifications and memberships\n- Enhanced footer design across all pages\n- React Icons integration for professional iconography\n- Wider layout (1400px) for spacious design\n- Optimized images with lazy loading\n- Configured for GitHub Pages deployment\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(sort:*)",
+      "Bash(npx sharp-cli:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

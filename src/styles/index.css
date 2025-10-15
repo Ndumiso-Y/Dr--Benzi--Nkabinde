@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-navy:  #0B1E3D;
+  --brand-cream: #F2EED9;
+  --brand-orange:#B7391C; /* updated accent */
+  --brand-dark:  #111316;
+  --brand-gray:  #BFC5CC;
+  --brand-link:  #C9D7FF;
+}
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }

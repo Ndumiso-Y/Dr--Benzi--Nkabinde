@@ -10,7 +10,10 @@
       "Bash(git push:*)",
       "Bash(sort:*)",
       "Bash(npx sharp-cli:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(git commit:*)",
+      "Bash(git rm:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

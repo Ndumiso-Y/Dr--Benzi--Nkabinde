@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from '../components/Carousel.jsx'
 import Footer from '../components/Footer.jsx'
 import bookCover from '../assets/BookCover.png'
-import drPhoto from '../assets/DRBenziRemovedBackground.png'
+import drPhoto from '../assets/DSC_4393.jpg'
 
 // Auto-load all DSC*.jpg images from assets for the gallery
 const gallery = Object

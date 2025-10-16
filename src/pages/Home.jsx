@@ -1,7 +1,9 @@
 import React from 'react'
 import Carousel from '../components/Carousel.jsx'
+import GalleryLightbox from '../components/GalleryLightbox.jsx'
 import Footer from '../components/Footer.jsx'
 import bookCover from '../assets/BookCover.png'
+import bookCoverFront from '../assets/BookCoverFront.png'
 import drPhoto from '../assets/DSC_4393.jpg'
 
 // Auto-load all DSC*.jpg images from assets for the gallery
@@ -13,31 +15,59 @@ export default function Home(){
 
   return (<div>
     {/* HERO */}
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Full Background Image */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-screen md:flex md:items-start overflow-hidden">
+      {/* Desktop Background Image */}
+      <div className="hidden md:block absolute inset-0 z-0">
         <img src={bookCover} alt="Book Cover" className="w-full h-full object-cover"/>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
       </div>
 
+      {/* Mobile Background - Solid gradient */}
+      <div className="md:hidden absolute inset-0 z-0 bg-gradient-to-br from-brand-navy via-brand-dark to-brand-navy"></div>
+
       {/* Content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 sm:px-8 py-20 sm:py-24 lg:pt-32">
-        <div className="flex justify-center lg:justify-end">
-          {/* Text Content */}
+      <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 sm:px-8 pt-8 sm:pt-20 lg:pt-28">
+        {/* Mobile Layout - Vertical Card */}
+        <div className="md:hidden flex flex-col items-center justify-center min-h-screen space-y-6 -mt-16">
+          <img
+            src={bookCoverFront}
+            alt="Choose Well Choose Life Book Cover"
+            className="w-48 h-auto rounded-xl shadow-2xl"
+          />
+          <div className="text-center text-white space-y-4">
+            <h1 className="text-3xl font-extrabold text-brand-cream leading-tight tracking-tight">
+              CHOOSE WELL<br/>CHOOSE LIFE
+            </h1>
+            <p className="text-sm text-brand-cream/90 font-light px-4 max-w-xs mx-auto">
+              A GUIDE TO A PURPOSE-FILLED LIFE FOR SOUTH AFRICAN TEENAGERS
+            </p>
+          </div>
+          <div className="flex flex-col w-full max-w-xs gap-3 pt-2">
+            <a href="#/book" className="px-6 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-brand-cream rounded-lg font-semibold text-center transition-all shadow-lg border border-white/30">
+              ABOUT BOOK →
+            </a>
+            <a href="#/order" className="px-6 py-3 bg-brand-orange hover:bg-brand-orange/90 text-white rounded-lg font-semibold text-center transition-all shadow-lg">
+              BUY BOOK
+            </a>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex justify-center lg:justify-end">
           <div className="text-white space-y-6 sm:space-y-8 max-w-2xl text-center lg:text-left">
             <div className="space-y-4 sm:space-y-6">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-brand-cream leading-[0.95] tracking-tight drop-shadow-2xl">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-brand-cream leading-[0.95] tracking-tight drop-shadow-2xl">
                 CHOOSE WELL<br/>CHOOSE LIFE
               </h1>
             </div>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-cream/95 font-light tracking-wide drop-shadow-lg px-4 lg:px-0">
+            <p className="text-xl md:text-2xl text-brand-cream/95 font-light tracking-wide drop-shadow-lg">
               A GUIDE TO A PURPOSE-FILLED LIFE FOR SOUTH AFRICAN TEENAGERS
             </p>
-            <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-5">
-              <a href="#/book" className="px-6 sm:px-8 py-3 sm:py-4 bg-black/60 backdrop-blur-sm hover:bg-black text-brand-cream rounded-md font-semibold text-base sm:text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 duration-300 border border-white/20">
+            <div className="pt-6 flex flex-row justify-center lg:justify-start gap-5">
+              <a href="#/book" className="px-8 py-4 bg-black/60 backdrop-blur-sm hover:bg-black text-brand-cream rounded-md font-semibold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 duration-300 border border-white/20">
                 ABOUT BOOK →
               </a>
-              <a href="#/order" className="px-6 sm:px-8 py-3 sm:py-4 bg-brand-orange hover:bg-brand-orange/90 text-white rounded-md font-semibold text-base sm:text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 duration-300">
+              <a href="#/order" className="px-8 py-4 bg-brand-orange hover:bg-brand-orange/90 text-white rounded-md font-semibold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 duration-300">
                 BUY BOOK
               </a>
             </div>
@@ -140,9 +170,7 @@ export default function Home(){
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-navy">Gallery</h2>
         <div className="w-16 sm:w-20 h-1 bg-brand-orange rounded-full mx-auto lg:mx-0"></div>
       </div>
-      <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
-        <Carousel images={gallery} autoplay interval={3000} />
-      </div>
+      <GalleryLightbox images={gallery} />
     </section>
 
     {/* MAP */}

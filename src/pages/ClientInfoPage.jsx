@@ -51,17 +51,17 @@ export default function ClientInfoPage() {
         <div className="border-t-2 border-brand-orange/30 pt-10">
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-6">Contact Info</h2>
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 space-y-3 text-gray-700">
-            <p className="flex items-center gap-3">
-              <FaMapMarkerAlt className="text-brand-orange text-xl flex-shrink-0" />
-              <span>17 South Road, Lindhaven, Roodepoort 1724</span>
+            <p className="flex items-start gap-3">
+              <FaMapMarkerAlt className="text-brand-orange text-xl flex-shrink-0 mt-1" />
+              <span className="text-sm md:text-base">17 South Road, Lindhaven, Roodepoort 1724</span>
             </p>
             <p className="flex items-center gap-3">
               <FaWhatsapp className="text-brand-orange text-xl flex-shrink-0" />
-              <span>WhatsApp +27 76 421 9522</span>
+              <span className="text-sm md:text-base">WhatsApp +27 76 421 9522</span>
             </p>
-            <p className="flex items-center gap-3">
-              <FaEnvelope className="text-brand-orange text-xl flex-shrink-0" />
-              <a className="text-brand-orange hover:text-brand-navy font-medium transition-colors duration-300" href="mailto:drnkabindedigital@gmail.com">
+            <p className="flex items-start gap-3">
+              <FaEnvelope className="text-brand-orange text-xl flex-shrink-0 mt-1" />
+              <a className="text-brand-orange hover:text-brand-navy font-medium transition-colors duration-300 text-sm md:text-base break-all" href="mailto:drnkabindedigital@gmail.com">
                 drnkabindedigital@gmail.com
               </a>
             </p>

@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { Routes, Route, NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import { HiMenu, HiX } from 'react-icons/hi'
 import Home from '../pages/Home.jsx'
 import AboutPage from '../pages/AboutPage.jsx'
 import BookPage from '../pages/BookPage.jsx'
 import OrderPage from '../pages/OrderPage.jsx'
 import ClientInfoPage from '../pages/ClientInfoPage.jsx'
+import BookPurchaseModal from '../components/BookPurchaseModal.jsx'
 
 const Nav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -107,9 +108,21 @@ const Nav = () => {
   );
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 export default function AppRoutes(){
   return (<div className="min-h-screen flex flex-col">
     <Nav/>
+    <ScrollToTop />
+    <BookPurchaseModal />
     <main className="flex-1">
       <Routes>
         <Route path="/" element={<Home/>}/>
